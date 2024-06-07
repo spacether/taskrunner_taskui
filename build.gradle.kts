@@ -11,6 +11,10 @@ plugins {
     id("io.ktor.plugin") version "2.3.11"
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
 application {
     mainClass.set("io.taskrunner.RestApplicationKt")
 }

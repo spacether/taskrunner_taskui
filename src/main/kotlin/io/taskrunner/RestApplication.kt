@@ -78,12 +78,13 @@ fun getQueueMessageCount(): Int {
     val factory = ConnectionFactory()
     val uri = System.getenv("RABBITMQ_URL") ?: "amqp://guest:guest@localhost"
     factory.setUri(uri);
-    factory.setRequestedHeartbeat(30);
-    factory.setConnectionTimeout(30);
     val connection = factory.newConnection()
     val channel = connection.createChannel()
     val declareOk = channel.queueDeclare(QUEUE_NAME, true, false, false, null)
-    return declareOk.messageCount
+    val messageCount = declareOk.messageCount
+    channel.close()
+    connection.close()
+    return messageCount
 }
 
 fun Application.configureRouting(repository: TaskRepository) {

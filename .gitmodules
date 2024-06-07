@@ -1,0 +1,3 @@
+[submodule "src/main/kotlin/io/taskmodels"]
+	path = src/main/kotlin/io/taskmodels
+	url = https://github.com/spacether/taskrunner_taskmodels.git

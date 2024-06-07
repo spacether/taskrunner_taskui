@@ -76,7 +76,7 @@ data class QueueInfo(
 
 fun getQueueMessageCount(): Int {
     val factory = ConnectionFactory()
-    val uri = System.getenv("RABBITMQ_URL") ?: "amqp://guest:guest@localhost"
+    val uri = System.getenv("CLOUDAMQP_URL") ?: "amqp://guest:guest@localhost"
     factory.setUri(uri);
     val connection = factory.newConnection()
     val channel = connection.createChannel()

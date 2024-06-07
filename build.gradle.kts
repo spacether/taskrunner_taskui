@@ -17,12 +17,12 @@ kotlin {
 }
 
 application {
-    mainClass.set(main_class)
+    mainClass.set("io.taskrunner.RestApplicationKt")
 }
 
 tasks.withType<Jar> {
     manifest {
-        attributes["Main-Class"] = main_class
+        attributes["Main-Class"] = "io.taskrunner.RestApplicationKt"
     }
 }
 

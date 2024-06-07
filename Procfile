@@ -1,1 +1,1 @@
-web: java -jar build/libs/taskrunner_taskui.jar
+web: java -jar build/libs/taskrunner_taskui.jar -info

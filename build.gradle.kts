@@ -4,6 +4,7 @@ val postgresql_driver_version: String by project
 val exposed_version: String by project
 val slf4j_version: String by project
 val ktor_version: String by project
+val main_class: String by project
 
 plugins {
     kotlin("jvm") version "2.0.0-RC3" // or kotlin("multiplatform") or any other kotlin plugin
@@ -16,7 +17,13 @@ kotlin {
 }
 
 application {
-    mainClass.set("io.taskrunner.RestApplicationKt")
+    mainClass.set(main_class)
+}
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = main_class
+    }
 }
 
 repositories {

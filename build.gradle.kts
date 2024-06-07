@@ -36,3 +36,7 @@ dependencies {
     // rabbitmq
     implementation("com.rabbitmq:amqp-client:latest.release")
 }
+
+tasks {
+    create("stage").dependsOn("installDist")
+}

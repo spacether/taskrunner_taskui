@@ -32,7 +32,8 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
 const val QUEUE_NAME = "tasks"
 
 fun main() {
-    embeddedServer(Netty, port = 8080) {
+    val port = System.getenv("PORT") ?: "8080"
+    embeddedServer(Netty, port = port.toInt()) {
         module()
     }.start(wait = true)
 }

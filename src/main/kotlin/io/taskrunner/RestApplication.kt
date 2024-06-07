@@ -75,12 +75,13 @@ data class QueueInfo(
 )
 
 fun getQueueMessageCount(): Int {
-    val factory = ConnectionFactory()
-    factory.host = "localhost"
-    val connection = factory.newConnection()
-    val channel = connection.createChannel()
-    val declareOk = channel.queueDeclare(QUEUE_NAME, true, false, false, null)
-    return declareOk.messageCount
+    return 0
+//    val factory = ConnectionFactory()
+//    factory.host = "localhost"
+//    val connection = factory.newConnection()
+//    val channel = connection.createChannel()
+//    val declareOk = channel.queueDeclare(QUEUE_NAME, true, false, false, null)
+//    return declareOk.messageCount
 }
 
 fun Application.configureRouting(repository: TaskRepository) {

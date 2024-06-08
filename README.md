@@ -6,6 +6,7 @@ Supported task operations are:
 - delete one
 
 ## Future Improvements to Make
+- protect the taskui webpage with auth
 - add unit tests
 - turn println into logger.info
 - increase the max number of connections to rabbitmq from 20 to a higher number

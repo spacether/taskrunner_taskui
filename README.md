@@ -6,7 +6,7 @@ Supported task operations are:
 - delete one
 
 ## Usage
-- remote: https://taskui-741f289ec720.herokuapp.com/
+- remote: https://taskui-741f289ec720.herokuapp.com/tasks
 - local: http://0.0.0.0:8080/tasks
 
 For local usage:

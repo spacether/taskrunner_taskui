@@ -46,14 +46,8 @@ fun Application.module() {
 }
 
 fun configureDatabases() {
-    val url = System.getenv("JDBC_DATABASE_URL") ?: "jdbc:postgresql://localhost:5432/taskrunner_db"
-    val user = System.getenv("JDBC_DATABASE_USERNAME") ?: "taskrunner_readwriter"
-    val password = System.getenv("JDBC_DATABASE_PASSWORD") ?: "xfdz8t-mds-V"
-    Database.connect(
-        url,
-        user = user,
-        password = password
-    )
+    val url = System.getenv("JDBC_DATABASE_URL") ?: "jdbc:postgresql://localhost:5432/taskrunner_db?user=taskrunner_readwriter&password=xfdz8t-mds-V"
+    Database.connect(url)
 }
 
 fun Application.configureTemplatingAndContentNegotiation() {
